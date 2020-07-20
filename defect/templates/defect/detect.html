@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% if error %}
+{{ error }}
+<br />
+<br />
+{% endif %}
+
+
+<h1>Create</h1>
+
+<form method="POST" action="{% url 'detect' %}" enctype="multipart/form-data">
+{% csrf_token %}
+<input type="file" name="image" />
+<br />
+<br />
+<input class="btn btn-primary" type="submit" value="Add Bangle" />
+</form>
+
+
+{% endblock %}

@@ -43,7 +43,6 @@ def detect(request):
         if(ans==0):
             defect = "Other defect"
 
-
         return render(request, 'defect/detect.html', {'error': defect})
 
     else:

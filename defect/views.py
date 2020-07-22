@@ -43,11 +43,11 @@ def detect(request):
         if(ans==0):
             defect = "Other defect"
 
-        return render(request, 'defect/detect.html', {'error': defect})
+        return render(request, 'defect/detect.html', {'ans': defect})
 
     else:
  
-        return render(request, 'defect/detect.html')
+        return render(request, 'defect/detect.html', {'error': "Please Add a Image!!"})
 
 
 def _grab_image(path=None, stream=None, url=None):

@@ -3,15 +3,13 @@
 
 {% block content %}
 
-{% if error %}
-{{ error }}
-<br />
-<br />
-{% endif %}
-
-
+<div class="container">
+    {% if error %}
+    <h4>{{ error }}</h4>
+    
+    {% endif %}
 <h1>Test</h1>
-
+<br>
 <form method="POST" action="{% url 'detect' %}" enctype="multipart/form-data">
 {% csrf_token %}
 <input type="file" name="image" />
@@ -19,6 +17,11 @@
 <br />
 <input class="btn btn-primary" type="submit" value="Add Bangle" />
 </form>
+</div>
+<br>
+{% if ans %}
+<h3>Test Result : {{ ans }}</h3>
 
+{% endif %}
 
 {% endblock %}
